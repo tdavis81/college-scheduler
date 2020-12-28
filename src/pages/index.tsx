@@ -1,3 +1,32 @@
+import { Box, Button, Container, useDisclosure } from "@chakra-ui/react"
+import React from "react"
+import Drawer from "../components/Drawer"
+import { Home } from "./Home";
+import Login from "./Login";
+import Register from "./register";
+
+const Index = () => {
+  let openingComponent = null;
+  const isLoggedIn = true;
+
+  if (isLoggedIn) {
+    openingComponent = <Login/>;
+  } else {
+    openingComponent = <Home/>;
+  }
+  
+  return (
+    <Box>
+      {openingComponent}
+    </Box>
+  )
+}
+
+export default Index
+
+
+
+/* 
 import {
   Link as ChakraLink,
   Text,
@@ -14,8 +43,7 @@ import { DarkModeSwitch } from '../components/DarkModeSwitch'
 import { CTA } from '../components/CTA'
 import { Footer } from '../components/Footer'
 
-const Index = () => (
-  <Container height="100vh">
+<Container height="100vh">
     <Hero />
     <Main>
       <Text>
@@ -49,6 +77,4 @@ const Index = () => (
     </Footer>
     <CTA />
   </Container>
-)
-
-export default Index
+*/
